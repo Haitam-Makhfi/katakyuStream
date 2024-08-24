@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    ". content side ."
+    "footer footer footer footer";
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+@media(max-width:968px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    grid-template-areas:
+      "header header header header"
+      "content content content content"
+      "side side side side"
+      "footer footer footer footer";
+    row-gap: 0;
+  }
+
+}
+
+p {
+  font-weight: bold;
+}
+
+
+.hero {
+  background-color: black;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../images/itadori.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 40vh;
+  background-repeat: no-repeat;
+  grid-area: header;
+  position: relative;
+  --logo-width: clamp(4.5rem, 9vw + 1rem, 6rem);
+}
+
+@media(max-width:968px) {
+  .hero {
+    margin-bottom: 2em;
+  }
+}
+
+nav {
+  margin: auto;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: var(--logo-width);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 7vw + 0.1rem, 3rem);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 2rem;
+  transition: color 0.3s;
+}
+
+nav ul li:hover {
+  color: rgb(207, 50, 29);
+}
+
+nav ul li a {
+  display: inline;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(207, 50, 29);
+}
+
+main {
+  grid-area: content;
+  position: relative;
+  min-height: 75vh;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/𝘩𝘪𝘴𝘶𝘪\ 𝘪𝘤𝘰𝘯𝘴.jpeg);
+  background-size: cover;
+  background-position: top;
+  filter: blur(0.5px);
+  background-color: black;
+  border-radius: 10px;
+  padding: 6rem;
+}
+
+@media(max-width:968px) {
+  .background-img {
+    border-radius: 0px;
+  }
+}
+
+main .container-one {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: max-content;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input:nth-child(n-4) {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  font-weight: bold;
+  border: solid rgb(207, 50, 29) 2px;
+}
+
+form input:nth-child(n-4)::placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+.terms {
+  width: 100%;
+  align-self: flex-start;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.terms div {
+  display: flex;
+  align-items: center;
+}
+
+.terms input {
+  width: 10px;
+}
+
+.terms label {
+  width: max-content;
+  margin-left: 1px;
+  color: white;
+  font-size: 0.7em;
+}
+
+form label {
+  width: 100px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+span p {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: white;
+}
+
+span p:hover,
+span p:focus {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(207, 50, 29);
+}
+
+button {
+  padding: 9px 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border-radius: 7px;
+  border: solid 2px white;
+  cursor: pointer;
+  transition: color 0.5s, border-color 0.5s;
+}
+
+.form-button:hover,
+.submit:hover {
+  color: rgb(207, 50, 29);
+}
+
+.submit {
+  border: solid 2px rgb(207, 50, 29);
+}
+
+
+button:hover {
+  border-color: rgb(207, 50, 29);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+aside {
+  grid-area: side;
+  position: relative;
+  width: 80%;
+  min-width: max-content;
+  height: 70%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+
+.container h2 {
+  font-size: clamp(1rem, 3vw + 0.1rem, 1.7rem);
+  color: black;
+}
+
+.form-logo {
+  font-size: clamp(0.5rem, 2.5vw + 0.1rem, 3rem);
+  color: rgb(207, 50, 29);
+}
+
+b {
+  color: transparent;
+}
+
+@media (max-width:968px) {
+  aside {
+    width: 100%;
+    min-height: 17vh;
+    border-radius: 0px;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-holder {
+    display: flex;
+    gap: 0.5em;
+  }
+}
+
+
+
+.alternatives {
+  width: max-content;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: capitalize;
+  font-weight: bold;
+
+}
+
+
+.alternatives p {
+  font-size: clamp(0.8rem, 3vw + 0.1rem, 1.3rem);
+  font-weight: 780;
+  color: rgb(207, 50, 29);
+}
+
+.alternatives+.alternatives {
+  margin-top: 0.5rem;
+}
+
+@media(max-width:968px) {
+  .alternatives {
+    gap: 2px;
+
+  }
+
+  .alternatives+.alternatives {
+    margin-top: 0;
+  }
+}
+
+.container {
+  width: 60%;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  margin: auto;
+}
+
+@media (max-width:968px) {
+  .container {
+    width: 80%;
+  }
+}
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  min-height: 12vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 3px 1.5fr 3px 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.stick {
+  width: 3px;
+  height: 4rem;
+  background-color: rgb(207, 50, 29);
+  border-radius: 20px;
+}
+
+.f-content1 {
+  color: white;
+  line-height: 2rem;
+  text-align: center;
+
+}
+
+.f-content2 {
+  color: white;
+  line-height: 2em;
+}
+
+.f-content1 p {
+  font-size: clamp(0.5em, 4vw + 0.1rem, 1.3rem);
+}
+
+.f-content2 p {
+  font-size: clamp(0.5em, 2vw + 0.1rem, 0.7em);
+  font-weight: 100;
+  text-align: center;
+
+}
+
+.icon4 {
+  font-size: clamp(0.5em, 3vw + 0.1rem, 1.5rem);
+  margin: 0.2em 0.5em;
+}
+
+.footer-button {
+  border: solid white 2px;
+  font-size: clamp(0.7em, 1vw + 0.1rem, 1em);
+
+}
+
+@media(max-width:380px) {
+
+  .gost {
+    transform: scale(0);
+    position: absolute;
+  }
+
+  .f-content2 {
+    grid-column: 1/4;
+  }
+
+  .footer-button {
+    padding: 0.5rem;
+  }
+}
